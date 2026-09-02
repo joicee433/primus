@@ -56,16 +56,14 @@ export const TEMPLATES: BadgeTemplate[] = [
   },
   {
     id: "binance-kyc",
-    primusTemplateId: "YOUR_BINANCE_KYC_TEMPLATE_ID",
-    name: "Binance KYC Level",
+    primusTemplateId: "9859330b-b94f-47a4-8f13-0ca56dabe273",    name: "Binance KYC Level",
     issuer: "Binance",
     category: "exchange",
     headline: "Binance KYC",
     description: "Prove you've cleared exchange KYC without revealing your identity documents.",
     seal: "BN",
     accent: "brass",
-    displayField: "kyc_level",
-  },
+    displayField: "passKycLevel",  },
   {
     id: "okx-kyc",
     primusTemplateId: "YOUR_OKX_KYC_TEMPLATE_ID",
