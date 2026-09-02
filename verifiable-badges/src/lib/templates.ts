@@ -1,0 +1,108 @@
+import type { BadgeTemplate } from "./types";
+
+// Each entry maps to a Data Verification Template created in the Primus
+// Developer Hub (https://dev.primuslabs.xyz). Primus ships pre-built
+// templates for most of the sources below — search the template market
+// there, copy the Template ID, and paste it in as `primusTemplateId`.
+// Until you do, the app runs these in demo mode automatically.
+export const TEMPLATES: BadgeTemplate[] = [
+  {
+    id: "x-followers",
+    primusTemplateId: "YOUR_X_FOLLOWERS_TEMPLATE_ID",
+    name: "X Follower Count",
+    issuer: "X (Twitter)",
+    category: "social",
+    headline: "X Followers",
+    description: "Prove your follower count straight from X, without handing over your login.",
+    seal: "X",
+    accent: "mint",
+    displayField: "followers_count",
+  },
+  {
+    id: "x-account-age",
+    primusTemplateId: "YOUR_X_ACCOUNT_AGE_TEMPLATE_ID",
+    name: "X Account Age",
+    issuer: "X (Twitter)",
+    category: "social",
+    headline: "X Account Age",
+    description: "Prove how long your account has existed — a simple, sybil-resistant signal.",
+    seal: "X",
+    accent: "mint",
+    displayField: "created_at",
+  },
+  {
+    id: "github-contributions",
+    primusTemplateId: "YOUR_GITHUB_CONTRIB_TEMPLATE_ID",
+    name: "GitHub Contributions",
+    issuer: "GitHub",
+    category: "dev",
+    headline: "GitHub Contributions",
+    description: "Verify a year of commit activity without exposing your private repos.",
+    seal: "GH",
+    accent: "brass",
+    displayField: "contributions",
+  },
+  {
+    id: "spotify-minutes",
+    primusTemplateId: "YOUR_SPOTIFY_TEMPLATE_ID",
+    name: "Spotify Listening Stats",
+    issuer: "Spotify",
+    category: "music",
+    headline: "Spotify Minutes",
+    description: "Prove your top-artist minutes or listening streak straight from Spotify.",
+    seal: "SP",
+    accent: "rust",
+    displayField: "minutes_listened",
+  },
+  {
+    id: "binance-kyc",
+    primusTemplateId: "YOUR_BINANCE_KYC_TEMPLATE_ID",
+    name: "Binance KYC Level",
+    issuer: "Binance",
+    category: "exchange",
+    headline: "Binance KYC",
+    description: "Prove you've cleared exchange KYC without revealing your identity documents.",
+    seal: "BN",
+    accent: "brass",
+    displayField: "kyc_level",
+  },
+  {
+    id: "okx-kyc",
+    primusTemplateId: "YOUR_OKX_KYC_TEMPLATE_ID",
+    name: "OKX KYC Level",
+    issuer: "OKX",
+    category: "exchange",
+    headline: "OKX KYC",
+    description: "Prove exchange-verified identity status without a document upload.",
+    seal: "OKX",
+    accent: "brass",
+    displayField: "kyc_level",
+  },
+  {
+    id: "luma-events",
+    primusTemplateId: "YOUR_LUMA_EVENTS_TEMPLATE_ID",
+    name: "Luma Events Attended",
+    issuer: "Luma",
+    category: "events",
+    headline: "Events Attended",
+    description: "Prove real-world attendance at events hosted on Luma.",
+    seal: "LU",
+    accent: "mint",
+    displayField: "events_attended",
+  },
+  {
+    id: "tiktok-followers",
+    primusTemplateId: "YOUR_TIKTOK_TEMPLATE_ID",
+    name: "TikTok Followers",
+    issuer: "TikTok",
+    category: "social",
+    headline: "TikTok Followers",
+    description: "Prove your TikTok following without connecting a public API you don't control.",
+    seal: "TT",
+    accent: "rust",
+    displayField: "followers_count",
+  },
+];
+
+export const isPlaceholderTemplate = (t: BadgeTemplate) =>
+  t.primusTemplateId.startsWith("YOUR_");
