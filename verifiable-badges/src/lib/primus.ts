@@ -77,7 +77,7 @@ export async function runLiveAttestation({
   let attestation;
   try {
     attestation = await zktls.startAttestation(signedRequestStr);
-  } catch (err) {
+  } catch (err) {    console.error("Primus attestation error:", err);
     const message = String(err instanceof Error ? err.message : err);
     if (/extension|not installed|not found/i.test(message)) {
       throw new PrimusExtensionMissingError(
