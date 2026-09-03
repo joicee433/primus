@@ -32,7 +32,7 @@ export default function ProofModal({ template, onClose, onMinted }: Props) {
     try {
       const proof = willUseDemo
         ? await runDemoAttestation({ template, recipient })
-        : await runLiveAttestation({ template, recipient });
+        : await runLiveAttestation ({ template, recipient });
       setMinted(proof);
       setStage("done");
     } catch (err) {
