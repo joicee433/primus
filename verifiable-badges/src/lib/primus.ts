@@ -72,7 +72,13 @@ export async function runLiveAttestation({
   // NOTE: signing with appSecret in the browser is only OK for local
   // testing. Move this call to a backend endpoint before shipping —
   // see the warning in README.md.
-  const signedRequestStr = await zktls.sign(requestStr);
+  let signedRequestStr: string;
+  try {
+    signedRequestStr = await zktls.sign(requestStr);
+    } catch (signErr) {
+      console.error("PRIMUS SIGN ERROR:", signErr);
+      throw signErr;
+      }
 
   let attestation;
   try {
