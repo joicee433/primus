@@ -25,6 +25,7 @@ export default function ProofModal({ template, onClose, onMinted }: Props) {
   const [minted, setMinted] = useState<ProofRecord | null>(null);
 
   const willUseDemo = isPlaceholderTemplate(template) || !primusConfigured();
+  console.log("DEBUG:", { willUseDemo, templateId: template.primusTemplateId, configured: primusConfigured() });
 
   async function handleGenerate() {
     setStage("working");
